@@ -8,11 +8,10 @@ const socket = require("socket.io-client")(
 // const colors = require('colors');
 
 
-
-
 /////// Global ////////
 const screen = blessed.screen({
     smartCSG: true,
+    debug: true,
     tile: 'productBotDemo',
 });
 screen.enableInput();
@@ -39,7 +38,7 @@ function swith_session(cur_session, next_session) {
 
 function on_init() {
     // setup connection to backend and render first chatbot message
-    socket.emit('socket connected');
+    socket.emit('test');
 }
 function init_components() {
     
@@ -58,7 +57,7 @@ function new_my_message(msg, message_area) {
     screen.render();
 }
 
-function new_bot_message(msg) {
+function new_bot_message(msg, message_area) {
     var new_row = message_area.addItem(msg_formatter(msg, 1));
     new_row.style.bg = '#343540';
     message_area.scrollTo(message_area.items.length+1);
@@ -243,25 +242,21 @@ function main() {
         if(!can_send) {
             return;
         }
+        can_send = false;
         var message = this.getValue();
         try {
-        //   await channel.sendMessage({
-        //     text: message,
-        //   });
-            // to do send it to client side
-            log(message)
+            socket.emit('message', message);
         } catch (err) {
           // error handling
         } finally {
-          this.clearValue();
+          input.clearValue();
+          input.focus();
           new_my_message(message, message_area);
-          screen.render();
-          can_send = false;
         }
       });
   
       // Append our box to the screen.
-      screen.key(['escape', 'q', 'C-c'], function() {
+      screen.key(['escape', 'q', 'C-c'], () => {
         return process.exit(0);
       });
 

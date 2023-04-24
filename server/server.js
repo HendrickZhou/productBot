@@ -15,8 +15,15 @@ io.on('connection', (socket) =>  {
 
     socket.on('test', (socket) => {
         console.log('test!');
-    })
+    });
+
+    socket.on('message', (data) => {
+        console.log('new message!'+ data);
+        
+    });
 })
+
+
 
 // user sending the message
 app.post('/send', async (req, res) => {

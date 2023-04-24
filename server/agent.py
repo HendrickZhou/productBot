@@ -100,7 +100,8 @@ def qna_with_context(text, context):
 # casul chat
 ##########
 class ChatSession:
-    pass
+    def __init__(self) -> None:
+        pass
 
 ##########
 # Keep all conversation consistent
