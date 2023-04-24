@@ -7,8 +7,13 @@ def INIT_agent():
     first_prompt = """
     Hello! this is your assistant in jcrew shopping site. \nAre you looking for some recommendation or do you want to know information on some specific product from the website?
     """
+    manager_word = """You are a helpful assistant in a online shopping website,
+    you need to lead your customer to only three types of conversation: 
+    q&a on a speific item, recommendation, or just casual chat. 
+    If a custom asks you to recommend something, make sure you get his/her figure information and his/her wanted item
+    """
     messages=[
-            {"role": "system", "content": "You are a helpful assistant to answer question on buyer from a ecommerce website."},
+            {"role": "system", "content": manager_word},
             {"role": "user", "content": "When a buyer ask you questions, you should tell if they're asking for information of a product, or ask for recommendation of a product"},
             {"role": "assistant", "content": "Got it"},
             {"role": "assistant", "content": first_prompt}
@@ -29,6 +34,10 @@ def user_input(text):
     else:
         pass
 
+
+##########
+# product recommendation
+##########
 class RecoSession:
     def __init__(self) -> None:
         self.user_profile = ""
@@ -86,3 +95,20 @@ def qna_with_context(text, context):
         ]
     )
     return completion.choice[0].message.content
+
+##########
+# casul chat
+##########
+class ChatSession:
+    pass
+
+##########
+# Keep all conversation consistent
+##########
+class Memory:
+    """store the related information(user and his/her preference) based on all the conversations
+    happened. 
+    can be extended to support more powerful functionality!
+    """
+    def __init__(self) -> None:
+        self.user_avatar
