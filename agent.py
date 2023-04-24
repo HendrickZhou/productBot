@@ -4,7 +4,9 @@ import crud
 import numpy as np
 
 def INIT_agent():
-    first_prompt = "Hello this is your assistant in jcrew shopping site. \nAre you looking for some recommendation or do you want to know information on some specific product from the website?"
+    first_prompt = """
+    Hello! this is your assistant in jcrew shopping site. \nAre you looking for some recommendation or do you want to know information on some specific product from the website?
+    """
     messages=[
             {"role": "system", "content": "You are a helpful assistant to answer question on buyer from a ecommerce website."},
             {"role": "user", "content": "When a buyer ask you questions, you should tell if they're asking for information of a product, or ask for recommendation of a product"},

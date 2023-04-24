@@ -6561,3 +6561,748 @@ INFO:root:url == https://www.jcrew.com/p/womens/categories/clothing/shirts-and-t
 INFO:WDM:====== WebDriver manager ======
 INFO:WDM:Get LATEST chromedriver version for google-chrome 112.0.5615
 INFO:WDM:Driver [/Users/zhouhang/.wdm/drivers/chromedriver/mac64/112.0.5615/chromedriver] found in cache
+INFO:openai:error_code=None error_message='Rate limit reached for default-global-with-image-limits in organization org-1S8rcQuYJTkBVXTWrxmsc3HM on requests per min. Limit: 60 / min. Please try again in 1s. Contact support@openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.' error_param=None error_type=requests message='OpenAI API error received' stream_error=False
+ERROR:root:Openai API error: expected string or buffer
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:Openai API error: Object of type ndarray is not JSON serializable
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:fail to update product embedding value
+Traceback (most recent call last):
+  File "/Users/zhouhang/Project/productBot/crud.py", line 160, in UPDATE_PRODUCT_EMBED
+    con.execute('''
+sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
+ERROR:root:Openai API error: 
+ERROR:root:Openai API error: 

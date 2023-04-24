@@ -153,3 +153,27 @@ def GET_PD(con,product_id):
         logging.error("couldn't find product")
 
     return details
+
+def UPDATE_PRODUCT_EMBED(con, product_id, embedding_val):
+    try:
+        with con:
+            con.execute('''
+            UPDATE product SET product_embedding=:embedding_val 
+            WHERE product_id=:pid
+            ''',
+            {'embedding_val':embedding_val, 'pid': product_id})
+    except:
+        logging.exception("fail to update product embedding value")
+        raise
+
+def UPDATE_USER_EMBED(con, uid, embedding_val):
+    try:
+        with con:
+            con.execute('''
+            UPDATE review SET user_embedding=:embedding_val 
+            WHERE id=:uid
+            ''',
+            {'embedding_val':embedding_val, 'uid': uid})
+    except:
+        logging.exception("fail to update user embedding values")
+        raise
