@@ -2,7 +2,7 @@
   "name": "productbot",
   "version": "1.0.0",
   "description": "prompt the user to input a link to the pdp",
-  "main": "app.js",
+  "main": "client/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,13 @@
   },
   "homepage": "https://github.com/HendrickZhou/productBot#readme",
   "dependencies": {
+    "blessed-contrib": "^1.0.11",
+    "blessed-tab-container": "^1.0.0",
+    "colors": "^1.4.0",
     "express": "^4.18.2",
-    "neo-blessed": "^0.2.0"
+    "neo-blessed": "^0.2.0",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1",
+    "stream-chat": "^8.5.0"
   }
 }
