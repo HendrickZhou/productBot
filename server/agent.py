@@ -1,6 +1,6 @@
 import openai
 from urllib.parse import urlparse
-import crud
+# import crud
 import numpy as np
 
 def INIT_agent():
@@ -102,6 +102,16 @@ def qna_with_context(text, context):
 class ChatSession:
     def __init__(self) -> None:
         pass
+
+    def reply(self, text) -> str:
+        completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+                {"role": "user", "content": text}
+            ]
+        )
+        return completion.choices[0].message.content
+
 
 ##########
 # Keep all conversation consistent

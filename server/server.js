@@ -18,9 +18,19 @@ io.on('connection', (socket) =>  {
     });
 
     socket.on('message', (data) => {
-        console.log('new message!'+ data);
-        
+        console.log('new message from user!'+ data);
+        socket.broadcast.emit('py_message', data);
     });
+
+    socket.on('py_message', (data) => {
+        console.log('received python message');
+        console.log(data);
+        socket.broadcast.emit('new message', data);
+    })
+
+    socket.on('py_test', (data) => {
+        console.log(data);
+    })
 })
 
 
@@ -31,7 +41,13 @@ app.post('/send', async (req, res) => {
 });
 
 app.get('/', async (req, res)=> {
-
+    socket.emit('py_setup_chat');
+    socket.on('py_setup_chat', (data) => {
+        console.log('python setup chat done');
+        // parse gpt return data into string
+        first_sentence = data;
+        // do sth with response
+    });
 });
 
 // user select chat session
