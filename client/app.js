@@ -326,9 +326,9 @@ function main() {
       });
   
       input.key('enter', async function() {
-        // if(!can_send) {
-        //     return;
-        // }
+        if(!can_send) {
+            return;
+        }
         can_send = false;
         var message = this.getValue();
         try {
