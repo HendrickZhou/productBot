@@ -1,10 +1,34 @@
 import agent
 
-chat_session = agent.ChatSession()
-def setup_chat_session():
-    pass
+cur_session = None
 
-def just_chat(msg):
-    return chat_session.reply(msg)
+def update_link(link):
+    global cur_session
+    if cur_session.session_id != 'qna':
+        return
+    return cur_session.update_link(link)
+
+def setup_session(session):
+    global cur_session
+    sessino_cls = agent.SessionFactory().new_session(session)
+    cur_session = sessino_cls()
+    return cur_session.intro()
+
+def continue_session(session):
+    global cur_session
+    sessino_cls = agent.SessionFactory().new_session(session)
+    cur_session = sessino_cls()
+
+def reply(msg):
+    return cur_session.reply(msg)
+
+
+def get_cur_session():
+    global cur_session
+    if cur_session is None:
+        return 'unassigned'
+    else:
+        return cur_session.session_id
+    
 
 

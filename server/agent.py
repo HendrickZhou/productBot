@@ -1,7 +1,9 @@
 import openai
 from urllib.parse import urlparse
-# import crud
 import numpy as np
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import crud
 
 def INIT_agent():
     first_prompt = """
@@ -34,12 +36,28 @@ def user_input(text):
     else:
         pass
 
+from abc import ABCMeta, abstractmethod
+class Session(metaclass=ABCMeta):
+    @property
+    @abstractmethod
+    def session_id(self):
+        pass
+
+    @abstractmethod
+    def reply(self, text):
+        pass
+
+    @abstractmethod
+    def intro(self):
+        pass
 
 ##########
 # product recommendation
 ##########
-class RecoSession:
+class RecoSession(Session):
+    session_id = 'recommend'
     def __init__(self) -> None:
+        super().__init__()
         self.user_profile = ""
         self.product_profile = ""
 
@@ -51,11 +69,15 @@ class RecoSession:
         links = []
         return links
 
-    def answer(self):
+    def reply(self, text):
         self.handle_input()
         links = self.update_reco()
         # wrap with word (product and what else)
         return 
+    
+    def intro(self):
+        return """Hello
+        """
 
     def handle_input(self,text):
         # if it's user's information
@@ -67,42 +89,65 @@ class RecoSession:
 ##########
 # product q&a
 ##########
-class QNASession:
-    def __init__(self, link) -> None:
-        self.context = build_qa_context(link)
-    def answer(self, text):
-        qna_with_context(text,self.context)
-
-def build_qa_context(link):
+class QNASession(Session):
+    """This is a expensive session! since it need to know the details on product on every single conversation
     """
-    function to call if there's specific link user want to know
-    """
-    id_ = extract_item_id(link)
-    details = crud.GET_PD(id_)
-    return {"content": details}
+    session_id = 'qna'
+    def __init__(self) -> None:
+        super().__init__()
 
-def extract_item_id(url):
-    result = urlparse(url)
-    return result.path.split('/')[-1]
+    def update_link(self, link):
+        self.link = link
+        self.context = self._build_qa_context(link)
+        return """
+        I got the link! Any questions on this product?
+        """
 
-def qna_with_context(text, context):
-    completion = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[
-            {"role": "system", "content": "A buyer is having a conversation with you regarding a product justed mentioned with you."},
-            {"role": "user", "content": context},
-            {"role": "user", "content": text}
-        ]
-    )
-    return completion.choice[0].message.content
+    def reply(self, text):
+        self.qna_with_context(text, self.context)
+    
+    def intro(self):
+        return """Hi there! This is Saul, you can ask me any questions on a product given the link!\n Please input the link in the prompt!
+        """
+
+    @classmethod
+    def _build_qa_context(cls,link):
+        """
+        function to call if there's specific link user want to know
+        """
+        id_ = cls._extract_item_id(link)
+        details = crud.GET_PD(id_)
+        print(details)
+        return {"content": details}
+
+    @staticmethod
+    def _extract_item_id(url):
+        result = urlparse(url)
+        return result.path.split('/')[-1]
+
+    @staticmethod
+    def qna_with_context(text, context):
+        completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+                {"role": "system", "content": "Your name is Saul. You're a helpful Q&A assistant. A buyer is having a conversation with you regarding a product mentioned with you."},
+                {"role": "user", "content": context},
+                {"role": "user", "content": text}
+            ]
+        )
+        return completion.choice[0].message.content
 
 ##########
 # casul chat
 ##########
-class ChatSession:
+class ChatSession(Session):
+    session_id = 'chat'
     def __init__(self) -> None:
-        pass
+        super().__init__()
 
+    def intro(self):
+        return """Hi! Saul here, anything you want to talk now?
+        """
     def reply(self, text) -> str:
         completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
@@ -112,6 +157,14 @@ class ChatSession:
         )
         return completion.choices[0].message.content
 
+class SessionFactory:
+    session_map = {
+        'chat': ChatSession,
+        'qna' : QNASession,
+        'recommend' : RecoSession
+    }
+    def new_session(self, session_id):
+        return self.session_map[session_id]
 
 ##########
 # Keep all conversation consistent
@@ -123,3 +176,5 @@ class Memory:
     """
     def __init__(self) -> None:
         self.user_avatar
+
+    # def compress(self, )

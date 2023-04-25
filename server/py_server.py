@@ -7,12 +7,30 @@ the_sio = None
 @sio.on('py_message')
 def on_py_message(data):
     print('received')
-    sio.emit('py_message', api.just_chat(data))
+    sio.emit('py_message', api.reply(data))
+
+@sio.on('py_input_link')
+def update_link(link):
+    print('update link')
+    sio.emit('py_input_link', api.update_link(link))
 
 @sio.event
 def connect():
     sio.emit('py_test','test string')
     print('connected')
+
+@sio.on('switch')
+def switch(data):
+    cur = data['cur']
+    next = data['next']
+    print('switching to' + next)
+    print("cur: "+ cur)
+    if cur == "unassigned":
+        intro = api.setup_session(next)
+        sio.emit('py_intro', intro)
+    else:
+        api.continue_session(next)
+   
 
 if __name__=="__main__":
     sio.connect('http://localhost:5500')
