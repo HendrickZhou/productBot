@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build" : "chmod +x ./install.sh && source ./install.sh",
     "go_server": "node server/server.js",
-    "go_agent": "python server/py_server.py",
+    "go_agent": "source venv/bin/activate && python server/py_server.py",
     "go": "node client/app.js" 
   },
   "repository": {
