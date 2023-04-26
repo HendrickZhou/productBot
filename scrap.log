@@ -7306,3 +7306,15 @@ Traceback (most recent call last):
 sqlite3.InterfaceError: Error binding parameter :embedding_val - probably unsupported type.
 ERROR:root:Openai API error: 
 ERROR:root:Openai API error: 
+INFO:openai:error_code=None error_message="None is not of type 'string' - 'messages.1.content'" error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+INFO:openai:error_code=None error_message="None is not of type 'string' - 'messages.1.content'" error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+INFO:openai:error_code=None error_message="None is not of type 'string' - 'messages.1.content'" error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+INFO:openai:error_code=None error_message="None is not of type 'string' - 'messages.1.content'" error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+INFO:openai:error_code=None error_message="None is not of type 'string' - 'messages.1.content'" error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+INFO:openai:error_code=None error_message="{'content': 'Product: Grundens® X J.Crew Graphic Hoodie\\nItem Number: BB117\\nBrand: Grundens\\nCollaboration with: J.Crew\\nAvailability: Currently sold out\\nSize: True to size based on 2 customer reviews\\nShipping: Available for Home Delivery and Pickup in Store\\nJ.Crew Passport members are eligible for free shipping on all orders\\nFit: Overall fitting of the hoodie is based on customer feedback and scored 3 on a scale of 0 to 5 (where 0 means running small and 5 means running large)\\nMaterial: Cotton and polyester blend\\nDesign: Features a graphic design exclusive to the collaboration\\nPurpose: Ideal for layering under a jacket on windy days or wearing on its own during milder weather\\nFeatures: Long sleeves, rib trim at waist, and kangaroo pocket\\nCare: Machine washable\\nOrigin: Made in the USA\\nAvailability: Select stores only'} is not of type 'string' - 'messages.1.content'" error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+ERROR:root:couldn't find product
+ERROR:root:couldn't find product
+ERROR:root:couldn't find product
+ERROR:root:couldn't find product
+ERROR:root:couldn't find product
+ERROR:root:couldn't find product

@@ -39,6 +39,8 @@ const banner_string = `
 
 /////// Global ////////
 var cur_session = 0; // 0 unassigned, 1 chat, 2 qna, 3 recommend
+var waiting_link = false;
+
 const screen = blessed.screen({
     smartCSG: true,
     debug: true,
@@ -154,6 +156,7 @@ function switch_session(next_session) {
             box_session_Recomend.style = {...unselected_style};
             cur_session = 2;
             screen.render();
+            waiting_link = true;
             break;
         case 3: // recommend
             box_session_Recomend.style = {...selected_style};
@@ -254,7 +257,9 @@ function new_bot_message(msg, message_area) {
 var cache_msg_list = [[],[],[]];
 function refill_message(msg_list) {
     while(msg_list.length != 0) {
-        message_area.pushItem(msg_list.shift());
+        var msg = msg_list.shift();
+        var row = message_area.addItem(msg[1]);
+        row.style.bg = msg[0];
     }
     message_area.scrollTo(message_area.items.length+1);
     screen.render()
@@ -267,7 +272,8 @@ function switch_screen(cur, next) {
     var cur_list = cache_msg_list[cur-1];
     var next_list = cache_msg_list[next-1];
     while(message_area.items.length!=0) {
-        cur_list.push(message_area.shiftItem());
+        var ele = message_area.shiftItem()
+        cur_list.push([ele.style.bg, ele.content]);
     }
     refill_message(next_list);
 }
@@ -287,13 +293,21 @@ function main() {
     
     socket.on('intro', (msg) => {
         new_bot_message(msg, message_area);
-        if(cur_session!=2)
-            can_send = true;
+        can_send = true;
     });
     socket.on('new message', (msg) => {
         new_bot_message(msg, message_area);
         can_send = true
     });
+    socket.on('link_done', (msg) => {
+        new_bot_message(msg, message_area);
+        can_send = true;
+        waiting_link = false;
+    }); 
+    socket.on('link_not_done', (msg)=> {
+        new_bot_message(msg, message_area);
+        can_send = true; 
+    })
 
     screen.append(banner);
     screen.append(box_session_QNA);
@@ -341,7 +355,11 @@ function main() {
         can_send = false;
         var message = this.getValue();
         try {
-            socket.emit('message', message);
+            if(waiting_link) {
+                socket.emit('input_link',message);
+            } else {
+                socket.emit('message', message);
+            }
         } catch (err) {
           // error handling
         } finally {

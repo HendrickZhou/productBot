@@ -95,19 +95,29 @@ class QNASession(Session):
     session_id = 'qna'
     def __init__(self) -> None:
         super().__init__()
+        self.context=None
 
     def update_link(self, link):
         self.link = link
-        self.context = self._build_qa_context(link)
-        return """
-        I got the link! Any questions on this product?
-        """
+        context, err = self._build_qa_context(link)
+        
+        if err == -1:
+            return {
+                "feedback" : context,
+                "done" : 0
+            }
+        self.context = context
+        feedback = """I got the link! Any questions on this product?"""
+        return {
+            'feedback': feedback,
+            "done": 1
+        }
 
     def reply(self, text):
-        self.qna_with_context(text, self.context)
+        return self.qna_with_context(text, self.context)
     
     def intro(self):
-        return """Hi there! This is Saul, you can ask me any questions on a product given the link!\n Please input the link in the prompt!
+        return """Hi there! This is Saul, you can ask me any questions on a product given the link!\n Please input the website link in the prompt!
         """
 
     @classmethod
@@ -115,11 +125,21 @@ class QNASession(Session):
         """
         function to call if there's specific link user want to know
         """
-        id_ = cls._extract_item_id(link)
-        details = crud.GET_PD(id_)
+        try:
+            id_ = cls._extract_item_id(link)
+        except:
+            print("fail to extract item id from url")
+            return """This doesn't seem to be a valid url! Can you type it again?""",-1
+        try:
+            con = crud.connect()
+            details = crud.GET_PD(con,id_)
+            con.close()
+        except:
+            print("can't find this item id:" + str(id_))
+            return """This doesn't seem to be a valid url! Can you type it again?""",-1
         print(details)
-        return {"content": details}
-
+        return details, 0
+    
     @staticmethod
     def _extract_item_id(url):
         result = urlparse(url)
@@ -130,12 +150,12 @@ class QNASession(Session):
         completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-                {"role": "system", "content": "Your name is Saul. You're a helpful Q&A assistant. A buyer is having a conversation with you regarding a product mentioned with you."},
-                {"role": "user", "content": context},
+                {"role": "system", "content": "Your name is Saul. Here's a product details, please read and answer questions on this product.\n" + context},
+                # {"role": "user", "content": context},
                 {"role": "user", "content": text}
             ]
         )
-        return completion.choice[0].message.content
+        return str(completion['choices'][0]['message']['content'])
 
 ##########
 # casul chat

@@ -7,7 +7,8 @@ the_sio = None
 @sio.on('py_message')
 def on_py_message(data):
     print('received')
-    sio.emit('py_message', api.reply(data))
+    the_reply = api.reply(data)
+    sio.emit('py_message', the_reply)
 
 @sio.on('py_input_link')
 def update_link(link):

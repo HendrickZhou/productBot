@@ -42,7 +42,14 @@ io.on('connection', (socket) =>  {
     });
 
     socket.on('py_input_link', (data) => {
-        socket.broadcast.emit('link_done', data);
+        var done = data['done'];
+        var feedback = data['feedback'];
+        if(done==1) {
+            socket.broadcast.emit('link_done', feedback);
+        } else {
+            socket.broadcast.emit('link_not_done', feedback); 
+        }
+        
     });
 
     socket.on('py_test', (data) => {
