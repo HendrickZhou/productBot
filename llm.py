@@ -1,6 +1,6 @@
 # from openai.embeddings_utils import distances_from_embeddings, cosine_similarity
 import openai
-import logging_config
+import scrapping.logging_config as logging_config
 import logging
 import tiktoken
 import time
