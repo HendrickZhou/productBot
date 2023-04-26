@@ -1,6 +1,4 @@
-python3 -m venv venv
-source venv/bin/activate  
-pip install -r ./requirements.txt
+python3 -m venv venv && source venv/bin/activate && pip install -r ./requirements.txt
 
 echo "############################"
 echo "Please be sure to install your openai api key!"
