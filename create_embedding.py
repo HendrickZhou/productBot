@@ -93,6 +93,35 @@ def update_embed_review():
             crud.UPDATE_USER_EMBED(con, nuid, embed_val)
             print("user_id:"+str(nuid) + " updated") 
 
+# def update_embed_review_new():
+#     # calculate user embedding
+#     review_q = deque()
+#     cursor = con.execute('''SELECT id, user_avatar, review_content FROM review''')
+#     all_user = cursor.fetchall()
+#     for user in all_user:
+#         uid, user_avatar,review_content = user
+#         if user_embedding is not None:
+#             print("user embed exist, skip")
+#             continue
+#         review_q.append((user_avatar, uid))
+#         try:
+#             result = cal_embedding_safe(review_q)
+#             if result == -1:
+#                 continue
+#         except:
+#             raise
+        
+#         for embed_val, nuid in result:
+#             crud.UPDATE_USER_EMBED(con, nuid, embed_val)
+#             print("user_id:"+str(nuid) + " updated")
+#     if len(review_q) != 0:
+#         try:
+#             result = cal_embedding_safe(review_q, flush=True)
+#         except:
+#             raise
+#         for embed_val, nuid in result:
+#             crud.UPDATE_USER_EMBED(con, nuid, embed_val)
+#             print("user_id:"+str(nuid) + " updated") 
 
 if __name__ == "__main__":
     con = crud.connect()

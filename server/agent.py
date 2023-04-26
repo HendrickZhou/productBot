@@ -1,40 +1,10 @@
 import openai
+from openai.embeddings_utils import distances_from_embeddings
 from urllib.parse import urlparse
 import numpy as np
 import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import crud
-
-def INIT_agent():
-    first_prompt = """
-    Hello! this is your assistant in jcrew shopping site. \nAre you looking for some recommendation or do you want to know information on some specific product from the website?
-    """
-    manager_word = """You are a helpful assistant in a online shopping website,
-    you need to lead your customer to only three types of conversation: 
-    q&a on a speific item, recommendation, or just casual chat. 
-    If a custom asks you to recommend something, make sure you get his/her figure information and his/her wanted item
-    """
-    messages=[
-            {"role": "system", "content": manager_word},
-            {"role": "user", "content": "When a buyer ask you questions, you should tell if they're asking for information of a product, or ask for recommendation of a product"},
-            {"role": "assistant", "content": "Got it"},
-            {"role": "assistant", "content": first_prompt}
-        ]
-    return messages, first_prompt
-
-def user_input(text):
-    completion = openai.Completion.create(
-    model="text-davinci-003",
-    prompt="Someone just say this:\n" + text + "\n Do you think is this person asking for information on a product, or asking for recommendation? If it's the former, say \"1\", otherwise, say \"0\"",
-    max_tokens=1,
-    ) 
-    answer = completion.choices[0].text
-    if(int(answer)==1): #ask for information
-        pass
-    elif(int(answer)==0): # ask for recommendation
-        pass
-    else:
-        pass
 
 from abc import ABCMeta, abstractmethod
 class Session(metaclass=ABCMeta):
@@ -53,38 +23,82 @@ class Session(metaclass=ABCMeta):
 
 ##########
 # product recommendation
-##########
+##########å
 class RecoSession(Session):
     session_id = 'recommend'
     def __init__(self) -> None:
         super().__init__()
-        self.user_profile = ""
-        self.product_profile = ""
+        self.text = None
+        self.message_list = [{
+           "role": "system",
+           "content": "You are a helpful assistant named Saul in an shopping website, a customer is asking for a recommendation. You need to get his/her figure information(age, height, body type only) and his/her wanted item." 
+        }]
 
-    def update_reco(self):
-        embed_val_user = np.array(openai.Embedding.create(input=self.user_profile, engine='text-embedding-ada-002')['data'][0]['embedding'])
-        # find closest in database
-        embed_val_product = np.array(openai.Embedding.create(input=self.product_profile, engine='text-embedding-ada-002')['data'][0]['embedding'])
-        # find closest
-        links = []
-        return links
+    def recommend(self):
+        embed_val_product = openai.Embedding.create(input=self.text, engine='text-embedding-ada-002')['data'][0]['embedding']
+        con = crud.get_connect()
+        result = crud.GET_ALL_PD(con)
+        if(len(result)==0):
+            raise Exception("product select is broken")
+        
+        all_dist = []
+        for pid, embedding in result:
+            dist = distances_from_embeddings(embed_val_product, [embedding], distance_metric='cosine')
+            all_dist.append((dist, pid))
+
+        sorted_dist = sorted(all_dist, key=lambda tup: tup[0]) # ascending
+        top_ten = sorted_dist[0:10]
+        top_ten = [p[1] for p in top_ten]
+        result = crud.GET_RATE(con, top_ten)
+        if(len(result)==0):
+            raise Exception("product select is broken 2")
+
+        result = list(map(list,result))
+        for i in range(len(result)):
+            if result[i][1] is None:
+                result[i][1] = -1
+        
+        top_three = sorted(result, key=lambda tup: tup[1], reverse=True) # descending
+        top_three = top_three[0:3]
+        top_three = [p[0] for p in top_three]
+        result = crud.GET_PDS(con, top_three)
+        return result
+        # find 10 highest pdp
+        # select the at most 3 with highest rate(if no rate, rate=-1)
+        # if there're reviews, find the reviewer's closet avatar, and if the review is positive, attach it
+
 
     def reply(self, text):
-        self.handle_input()
-        links = self.update_reco()
-        # wrap with word (product and what else)
-        return 
+        self.text = text
+        result = self.recommend()
+        pdps_str = ""
+        for r in result:
+            pdps_str += r[0] + '\n'
+        system_prompt = [{
+           "role": "system",
+           "content": "Here're three product details:\n" + 
+           pdps_str + 
+           "\nHere's the customer's preference:\n"+
+           text +
+           "\n Now recommend these three product to a custom in a formatted way, be sure to include the item Id and recommendation reason for each item!"
+        }]
+        completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=system_prompt,
+        )
+        return str(completion['choices'][0]['message']['content'])
     
     def intro(self):
-        return """Hello
+        # completion = openai.ChatCompletion.create(
+        # model="gpt-3.5-turbo",
+        # temperature = 0.7,
+        # messages=self.message_list,
+        # )
+        # return str(completion['choices'][0]['message']['content'])
+        return """Hello! I'm Saul, your shopping assistant. Before I can recommend an item for you, may I know your figure information such as age, height and body type? This will help me provide a more accurate suggestion for you. Thank you!
+
+Once I have your figure information, may I know the item you are looking for?
         """
-
-    def handle_input(self,text):
-        # if it's user's information
-        self.user_profile += text
-        # if it's product's information
-        self.product_profile += text
-
 
 ##########
 # product q&a
@@ -156,7 +170,6 @@ class QNASession(Session):
         model="gpt-3.5-turbo",
         messages=[
                 {"role": "system", "content": "Your name is Saul. Here's a product details, please read and answer questions on this product.\n" + context},
-                # {"role": "user", "content": context},
                 {"role": "user", "content": text}
             ]
         )

@@ -149,6 +149,7 @@ function switch_session(next_session) {
             box_session_Recomend.style = {...unselected_style};
             cur_session = 1;
             screen.render();
+            waiting_link = false;
             break;
         case 2: // qna
             box_session_QNA.style = {...selected_style};
@@ -163,6 +164,7 @@ function switch_session(next_session) {
             box_session_QNA.style = {...unselected_style};
             box_session_Chat.style = {...unselected_style};
             cur_session = 3;
+            waiting_link = false;
             screen.render();
             break;
     }

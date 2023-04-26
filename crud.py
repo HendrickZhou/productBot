@@ -142,7 +142,19 @@ def ADD_REVIEW(con, p_id, user_avatar, user_avatar_raw, review_content):
             con.execute(query, (the_real_id, user_avatar, user_avatar_raw, review_content))
     except:
         logging.error("fail to insert review info into database")
-
+def GET_PDS(con, pds):
+    query = "SELECT product_details FROM product WHERE product_id IN ({seq})".format(
+        seq=','.join(['?']*len(pds))
+    )
+    try:
+        cursor = con.execute(query, pds)
+        result = cursor.fetchall()
+    except:
+        logging.error("fail to find product")
+        return []
+    else:
+        return result  
+    
 def GET_PD(con,product_id):
     """
     """
@@ -160,6 +172,32 @@ def GET_PD(con,product_id):
         if(len(details)==0):
             raise Exception("didn't find item")
         return details
+    
+def GET_ALL_PD(con):
+    query = """
+    SELECT product_id, product_embedding FROM product
+    """
+    try:
+        cursor = con.execute(query)
+        result = cursor.fetchall()
+    except:
+        logging.error("fail to find product id")
+        return []
+    else:
+        return result
+
+def GET_RATE(con, pds):
+    query = "SELECT product_id, average_rate FROM product WHERE product_id IN ({seq})".format(
+        seq=','.join(['?']*len(pds))
+    )
+    try:
+        cursor = con.execute(query, pds)
+        result = cursor.fetchall()
+    except:
+        logging.error("fail to find product")
+        return []
+    else:
+        return result 
 
 def UPDATE_PRODUCT_EMBED(con, product_id, embedding_val):
     try:
