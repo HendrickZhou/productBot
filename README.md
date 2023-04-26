@@ -3,7 +3,7 @@
 
 open two terminal windows, run:
 
-`npm run go_server` & `npm run go_agent`(in order) to start the backend service
+`npm run go_server` & `source venv/bin/activate && npm run go_agent`(in order) to start the backend service
 
 Now open another terminal window(GUI), run:
 
