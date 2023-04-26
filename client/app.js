@@ -43,6 +43,9 @@ var waiting_link = false;
 
 const screen = blessed.screen({
     smartCSG: true,
+    style: {
+        "bg" : "#0d2a35"
+    },
     debug: true,
     tile: 'productBotDemo',
 });

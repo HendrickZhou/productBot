@@ -1,12 +1,10 @@
-# Design choice
-prompt the user to input a link to the pdp
+# Usage
+`npm run build` for install
 
-if not valid, prompt another
+open two terminal windows, run:
 
-Ask user what kind of problem do you have
+`npm run go_server` & `npm run go_agent`(in order) to start the backend service
 
-Q&A on basic mechandise information given context of the product
+Now open another terminal window(GUI), run:
 
-Ask for recommendation
-
-If other than that, guide them to ask for two of the questions above
+`npm run go` to start chatting!
