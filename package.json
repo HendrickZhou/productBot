@@ -5,7 +5,7 @@
   "main": "client/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "chmod +x ./install.sh",
+    "build" : "chmod +x ./install.sh && ./install.sh",
     "go_server": "node server/server.js",
     "go_agent": "python server/py_server.py",
     "go": "node client/app.js" 
