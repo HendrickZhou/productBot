@@ -18,6 +18,8 @@ def continue_session(session):
     global cur_session
     sessino_cls = agent.SessionFactory().new_session(session)
     cur_session = sessino_cls()
+    if session == 'qna':
+        return cur_session.intro()
 
 def reply(msg):
     return cur_session.reply(msg)

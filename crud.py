@@ -41,6 +41,10 @@ def connect():
     con = sqlite3.connect(DB_NAME, detect_types=sqlite3.PARSE_DECLTYPES)
     return con
 
+def get_connect():
+    con = sqlite3.connect(DB_NAME, detect_types=sqlite3.PARSE_DECLTYPES)
+    return con
+
 def create_error_db():
     """
     """
@@ -151,8 +155,11 @@ def GET_PD(con,product_id):
             details, = cursor.fetchone()
     except:
         logging.error("couldn't find product")
-
-    return details
+        raise
+    else:
+        if(len(details)==0):
+            raise Exception("didn't find item")
+        return details
 
 def UPDATE_PRODUCT_EMBED(con, product_id, embedding_val):
     try:

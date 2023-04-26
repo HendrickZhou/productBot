@@ -30,7 +30,9 @@ def switch(data):
         intro = api.setup_session(next)
         sio.emit('py_intro', intro)
     else:
-        api.continue_session(next)
+        result = api.continue_session(next)
+        if(result is not None):
+            sio.emit('py_intro', result)
    
 
 if __name__=="__main__":

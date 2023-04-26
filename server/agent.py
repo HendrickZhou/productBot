@@ -125,20 +125,25 @@ class QNASession(Session):
         """
         function to call if there's specific link user want to know
         """
+        id_ = None
         try:
             id_ = cls._extract_item_id(link)
         except:
             print("fail to extract item id from url")
             return """This doesn't seem to be a valid url! Can you type it again?""",-1
+        
+        con = crud.get_connect()
         try:
-            con = crud.connect()
+            # import pdb; pdb.set_trace()
             details = crud.GET_PD(con,id_)
-            con.close()
         except:
             print("can't find this item id:" + str(id_))
             return """This doesn't seem to be a valid url! Can you type it again?""",-1
-        print(details)
-        return details, 0
+        else:
+            print(details)
+            return details, 0
+        finally:
+            con.close()
     
     @staticmethod
     def _extract_item_id(url):

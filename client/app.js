@@ -278,10 +278,6 @@ function switch_screen(cur, next) {
     refill_message(next_list);
 }
 
-function input_link() {
-    
-}
-
 function on_init() {
     // setup connection to backend and render first chatbot message
     socket.emit('test');
