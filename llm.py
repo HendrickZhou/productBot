@@ -2,16 +2,9 @@
 import openai
 import scrapping.logging_config as logging_config
 import logging
-import tiktoken
 import time
 
 MIN_BATCH_TOKEN_NUM = 4000
-
-def num_tokens_from_string(string: str, encoding_name: str="cl100k_base") -> int:
-    """Returns the number of tokens in a text string."""
-    encoding = tiktoken.get_encoding(encoding_name)
-    num_tokens = len(encoding.encode(string))
-    return num_tokens
 
 def num_tokens_from_string_fast(str_len: int) -> int:
     """return the estimated number of tokens in a text string but fast
