@@ -11,9 +11,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import crud
 import llm
-from scrap_exception import *
+from scrapping.scrap_exception import *
 from util import run_once
-import logging_config
+import scrapping.logging_config as logging_config
 import logging
 
 def scrap(url,con):

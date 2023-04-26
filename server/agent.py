@@ -80,7 +80,7 @@ class RecoSession(Session):
            pdps_str + 
            "\nHere's the customer's preference:\n"+
            text +
-           "\n Now recommend these three product to a custom in a formatted way, be sure to include the item Id and recommendation reason for each item!"
+           "\n Now recommend these three product to a custom, be sure to include the item Id and recommendation reason for each item!"
         }]
         completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",

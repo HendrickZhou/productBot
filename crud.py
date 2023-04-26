@@ -13,9 +13,9 @@ import numpy as np
 import io
 from util import run_once
 import logging
-import logging_config
+import scrapping.logging_config as logging_config
 
-DB_NAME = "pdp.db"
+DB_NAME = "./db/pdp.db"
 
 def adapt_array(arr):
     """

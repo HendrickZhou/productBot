@@ -2,8 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urlparse
 import json
-from config import sitemap_idx_url, root_url
-from product import Product, MetaInfo
+from scrapping.config import sitemap_idx_url, root_url
 
 
 #############################
