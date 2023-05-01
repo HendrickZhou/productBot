@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+<div id="damping"></div>
+<div id="Ecn"></div>
+
+<script>
+
+// prepare the data
+N=10;
+Ec = [200,100,300,130,193,139,25,82,23,100];
+//Ec = Array(10).fill(200);
+alpha = Array(10).fill(1);
+alpha = [1, 0.1, 1, 0.1, 0.1, 0.1, 0.2, 0.5, 1, 0.1]
+E = 1000;
+data = recursiveFormula(N, E, Ec, alpha);
+console.log(data);
+// each row is same n, different k
+
+
+
+// set the dimensions and margins of the graph
+var margin = {top: 60, right: 30, bottom: 40, left:110},
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+
+// visualize
+// Add X axis
+var x = d3.scaleLinear()
+  .domain([-1, 10])
+  .range([ 0, width ]);
+svg.append("g")
+  .attr("transform", "translate(0," + height + ")")
+  .call(d3.axisBottom(x));
+
+// Add X axis label:
+svg.append("text")
+    .attr("text-anchor", "end")
+    .attr("x", width+20)
+    .attr("y", height + 30)
+    .text("k (index of conversation content)");
+
+// Add Y axis label:
+svg.append("text")
+    .attr("text-anchor", "end")
+    .attr("x", 0)
+    .attr("y", -30)
+    .text("n (total conversation number)")
+    .attr("transform", "rotate(-90)");
+
+// add title
+svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        .text("information entroy of a conversation");
+
+// Create a Y scale for densities
+var y = d3.scaleLinear()
+  .domain([0, 2000])
+  .range([ height, 0]);
+
+// Create the Y axis for names
+var range = [];
+for (var i = 10; i >= 0; i--) {
+    range.push(i);
+}
+var yName = d3.scaleBand()
+  .domain(range)
+  .range([0, height])
+  .paddingInner(1)
+svg.append("g")
+  .call(d3.axisLeft(yName));
+
+// Add areas
+svg.selectAll("areas")
+  .data(data)
+  .enter()
+  .append("path")
+    .attr("transform", function(d){return("translate(0," + (yName(d.n)-height) +")" )})
+    .datum(function(d){return(d.values)})
+    .attr("fill", "#69b3a2")
+    .attr("stroke", "#000")
+    .attr("stroke-width", 1)
+    .attr("d",  d3.line()
+        .curve(d3.curveBasis)
+        .x(function(d) { return x(d[0]); })
+        .y(function(d) { return y(d[1]); })
+    )
+
+
+function recursiveFormula(N, E, Ec, alpha) {
+  var result = [];
+  for(var k=0; k<N; k++) {
+    var prev_ele = (Ec[k]/(E+Ec[k]))*E;
+    var row_k = [];
+    for (var n=0; n<N; n++) {
+      if(n<k) 
+        row_k.push(0);
+      else if(n==k)
+        row_k.push(prev_ele);
+      else {
+        row_k.push(prev_ele * alpha[k] * (E/(E+Ec[n])));
+        prev_ele = row_k[row_k.length-1];
+      }
+    }
+    result.push(row_k);
+  }
+  result.push(Array(N).fill(0));
+  result.unshift(Array(N).fill(0));
+  result =  transpose(result);
+  for(var i=0; i<N; i++) {
+    for(var j=0; j<N+2; j++) {
+      result[i][j] = [j,result[i][j]];
+    }
+    result[i] = {n:i, values:result[i]};
+  }
+  return result;
+}
+
+function transpose(matrix) {
+  return matrix[0].map((col, i) => matrix.map(row => row[i]));
+}
+
+</script>
